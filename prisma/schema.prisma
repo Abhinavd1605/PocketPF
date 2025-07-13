@@ -1,0 +1,55 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+model Item {
+  id          String   @id @default(cuid())
+  name        String   @unique
+  category    String
+  aliases     String[] // Alternative names for the same item
+  description String?
+  brand       String?
+  size        String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  // Relationships
+  alternatives Alternative[] @relation("ItemAlternatives")
+  alternativeFor Alternative[] @relation("AlternativeItem")
+
+  @@map("items")
+}
+
+model Alternative {
+  id               String @id @default(cuid())
+  itemId           String // Original item
+  alternativeItemId String // Alternative item
+  reason           String? // Why this is an alternative (e.g., "similar product", "same brand")
+  priority         Int    @default(1) // Priority of this alternative (1 = highest)
+
+  // Relationships
+  item            Item @relation("ItemAlternatives", fields: [itemId], references: [id], onDelete: Cascade)
+  alternativeItem Item @relation("AlternativeItem", fields: [alternativeItemId], references: [id], onDelete: Cascade)
+
+  @@unique([itemId, alternativeItemId])
+  @@map("alternatives")
+}
+
+model Category {
+  id          String   @id @default(cuid())
+  name        String   @unique
+  description String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@map("categories")
+}
