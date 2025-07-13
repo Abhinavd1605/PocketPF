@@ -2,12 +2,20 @@ import { stores } from '@/data/stores';
 import Link from 'next/link';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { MapPin, ArrowRight, ListChecks } from 'lucide-react';
+import { MapPin, ArrowRight, ListChecks, Trophy } from 'lucide-react';
 
 export default function Home() {
   return (
     <main className="flex flex-col items-center justify-center min-h-screen bg-background p-4 sm:p-8">
       <div className="text-center mb-12">
+        <div className="flex justify-center mb-4">
+          <Button asChild variant="outline" className="bg-gradient-to-r from-indigo-50 to-gray-750 border-gray-200 hover:from-gray-900 hover:to-purple-100 hover:scale-105 transition-all duration-300">
+            <Link href="/sparkathon" className="flex items-center gap-2">
+              <Trophy className="h-4 w-4 text-gray-900" />
+              Walmart Sparkathon 2025
+            </Link>
+          </Button>
+        </div>
         <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-primary mb-2 font-headline flex items-center justify-center gap-4">
           <ListChecks className="h-10 w-10 sm:h-12 sm:w-12" />
           Pocket PathFinder

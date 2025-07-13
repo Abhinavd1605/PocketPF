@@ -35,59 +35,6 @@ export const stores: Store[] = [
     },
   },
   {
-    id: 'target',
-    name: 'Target',
-    description: 'Medium department-style store with groceries. (15x12)',
-    layout: {
-      width: 15,
-      height: 12,
-      entrance: [7, 11],
-      exit: [7, 11],
-      sections: [
-        { id: 'produce', name: 'Fresh Produce', category: 'produce', coordinates: [1, 1, 4, 3] },
-        { id: 'dairy', name: 'Dairy & Eggs', category: 'dairy', coordinates: [1, 4, 4, 6] },
-        { id: 'meat', name: 'Meat & Deli', category: 'meat', coordinates: [1, 7, 4, 10] },
-        { id: 'bakery', name: 'Bakery', category: 'bakery', coordinates: [6, 1, 9, 4] },
-        { id: 'pantry', name: 'Pantry Items', category: 'pantry', coordinates: [6, 6, 9, 10] },
-        { id: 'frozen', name: 'Frozen Foods', category: 'frozen', coordinates: [11, 1, 13, 4] },
-        { id: 'beverages', name: 'Beverages', category: 'beverages', coordinates: [11, 5, 13, 7] },
-        { id: 'snacks', name: 'Snacks', category: 'snacks', coordinates: [11, 8, 13, 10] },
-      ],
-      landmarks: [
-        { id: 'cs', name: 'Guest Services', coordinates: [2, 10] },
-        { id: 'starbucks', name: 'Starbucks', coordinates: [12, 10] },
-      ],
-      walls: [
-        ...Array.from({ length: 10 }, (_, i) => [5, i + 1] as [number, number]),
-        ...Array.from({ length: 10 }, (_, i) => [10, i + 1] as [number, number]),
-      ],
-    },
-  },
-  {
-    id: 'local-grocery',
-    name: 'Local Grocery',
-    description: 'Small, simple grocery store. (10x8)',
-    layout: {
-      width: 10,
-      height: 8,
-      entrance: [1, 7],
-      exit: [8, 7],
-      sections: [
-        { id: 'produce', name: 'Produce', category: 'Produce', coordinates: [1, 1, 2, 5] },
-        { id: 'dairy', name: 'Dairy', category: 'Dairy', coordinates: [4, 1, 5, 5] },
-        { id: 'meat', name: 'Meat', category: 'Meat', coordinates: [7, 1, 8, 5] },
-        { id: 'pantry', name: 'Pantry', category: 'Pantry', coordinates: [1, 1, 8, 1] },
-      ],
-      landmarks: [
-        { id: 'checkout', name: 'Checkout', coordinates: [4, 7] },
-      ],
-      walls: [
-        ...Array.from({ length: 5 }, (_, i) => [3, i + 1] as [number, number]),
-        ...Array.from({ length: 5 }, (_, i) => [6, i + 1] as [number, number]),
-      ],
-    },
-  },
-  {
     id: 'walmart-supercenter-xl',
     name: 'Walmart Supercenter XL - Highway Plaza',
     description: 'Extra large supercenter with expanded grocery and general merchandise. (30x20)',

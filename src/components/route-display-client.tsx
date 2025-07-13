@@ -113,30 +113,30 @@ export function RouteDisplayClient({ store }: { store: Store }) {
         <>
       {/* Desktop Layout */}
       <div className="hidden lg:flex justify-center min-h-screen bg-background p-4 pt-20">
-        <div className="w-full max-w-7xl flex flex-col lg:flex-row gap-6">
-          <div className="lg:w-1/3 flex flex-col gap-6">
-            <NavigationPanel
-              instructions={navigationInstructions}
-              items={confirmedItems}
-              activeInstructionId={activeInstructionId}
-              onInstructionSelect={handleInstructionSelect}
-            />
-          </div>
-          <div className="lg:w-2/3 lg:flex-grow">
-            <Card className="h-[70vh] lg:h-full">
-                <CardContent className="p-2 sm:p-4 h-full">
-                     <StoreMap
-                      layout={store.layout}
-                      path={optimizedPath}
-                      itemLocations={itemLocations}
-                      currentPosition={activeLocation}
+      <div className="w-full max-w-7xl flex flex-col lg:flex-row gap-6">
+        <div className="lg:w-1/3 flex flex-col gap-6">
+          <NavigationPanel
+            instructions={navigationInstructions}
+            items={confirmedItems}
+            activeInstructionId={activeInstructionId}
+            onInstructionSelect={handleInstructionSelect}
+          />
+        </div>
+        <div className="lg:w-2/3 lg:flex-grow">
+          <Card className="h-[70vh] lg:h-full">
+              <CardContent className="p-2 sm:p-4 h-full">
+                   <StoreMap
+                    layout={store.layout}
+                    path={optimizedPath}
+                    itemLocations={itemLocations}
+                    currentPosition={activeLocation}
                       autoZoomToCurrentPosition={true}
-                    />
-                </CardContent>
-            </Card>
-          </div>
+                  />
+              </CardContent>
+          </Card>
         </div>
       </div>
+    </div>
 
       {/* Mobile and Tablet Layout */}
       <div className="lg:hidden flex flex-col h-screen bg-background pt-20">

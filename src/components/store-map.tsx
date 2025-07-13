@@ -310,16 +310,16 @@ export default function StoreMap({ layout, path = [], itemLocations = [], curren
             {directions && directions.size === 1 && (
               <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-10">
                 {Array.from(directions).map((direction) => (
-                  <ArrowUp
-                    key={direction}
-                    className={cn(
+                <ArrowUp
+                  key={direction}
+                  className={cn(
                       'text-white drop-shadow-sm',
                       'h-5 w-5',
-                      direction === 'up' && 'rotate-0',
-                      direction === 'right' && 'rotate-90',
-                      direction === 'down' && 'rotate-180',
-                      direction === 'left' && '-rotate-90'
-                    )}
+                    direction === 'up' && 'rotate-0',
+                    direction === 'right' && 'rotate-90',
+                    direction === 'down' && 'rotate-180',
+                    direction === 'left' && '-rotate-90'
+                  )}
                     strokeWidth={2}
                   />
                 ))}
@@ -346,7 +346,7 @@ export default function StoreMap({ layout, path = [], itemLocations = [], curren
                      <div className="bg-white text-blue-600 text-xs font-bold w-5 h-5 rounded-full flex items-center justify-center shadow-md border border-blue-200">
                        {isStart ? 'S' : isEnd ? 'E' : stepIndex + 1}
                      </div>
-                   </div>
+          </div>
                  );
                }
                return null;
@@ -462,17 +462,17 @@ export default function StoreMap({ layout, path = [], itemLocations = [], curren
       >
         <div 
           ref={contentRef}
-          style={{
+             style={{
             display: 'grid',
             gridTemplateColumns: `repeat(${layout.width}, 3rem)`,
             gridTemplateRows: `repeat(${layout.height}, 3rem)`,
             gap: '1px',
-            transform: `translate(${view.x}px, ${view.y}px) scale(${scale})`,
+                transform: `translate(${view.x}px, ${view.y}px) scale(${scale})`,
             transformOrigin: 'top left',
             transition: panning ? 'none' : 'transform 0.5s ease-out',
             padding: '1rem',
             backgroundColor: '#f8fafc'
-          }}
+             }}
           className="absolute"
         >
           {Array.from({ length: layout.height }, (_, y) =>
@@ -525,7 +525,7 @@ export default function StoreMap({ layout, path = [], itemLocations = [], curren
             <Maximize2 className="h-4 w-4" />
           </Button>
         </div>
-      </div>
+        </div>
     </div>
   );
 }

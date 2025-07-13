@@ -128,6 +128,18 @@ src/
 - **NavigationPanel**: Step-by-step directions display
 - **RouteDisplayClient**: Main route visualization component
 
+## 🏆 About Walmart's Challenge
+
+This project was developed for a Walmart innovation challenge, and it's exciting to share how they evaluate submissions! Walmart chooses winners based on four key criteria that really showcase what they value in innovative solutions:
+
+**What Walmart Looks For:**
+- **Innovation, Creativity & Scalability** - They want solutions that think outside the box and can grow with their business
+- **Technical Feasibility** - Your idea needs to actually work in the real world (no pipe dreams!)
+- **Impact & Benefit to Walmart** - How will this make shopping better for customers and operations smoother for Walmart?
+- **Quality of Proof of Concept & Demo** - Show, don't just tell! A working demo speaks volumes
+
+It's clear that Walmart values practical innovation that can genuinely improve the shopping experience. PocketPF addresses these criteria by offering a scalable AI solution that enhances customer navigation, reduces shopping time, and could potentially integrate with Walmart's existing infrastructure to benefit both shoppers and store operations.
+
 ## 🤝 Contributing
 
 1. Fork the repository

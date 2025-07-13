@@ -219,18 +219,18 @@ export default function ShoppingList({ store }: ShoppingListProps) {
                 {processedItems.map((item, index) => (
                   <div key={index} className="p-3 rounded-md border bg-card">
                     <div className="flex items-start gap-3">
-                      <Checkbox
-                        id={`item-${index}`}
-                        checked={item.checked}
-                        onCheckedChange={() => handleItemCheck(index)}
-                        className="mt-1"
-                      />
+                    <Checkbox
+                      id={`item-${index}`}
+                      checked={item.checked}
+                      onCheckedChange={() => handleItemCheck(index)}
+                      className="mt-1"
+                    />
                       <div className="grid gap-1.5 leading-none flex-1">
-                        <label htmlFor={`item-${index}`} className="font-medium cursor-pointer">
-                          {item.interpreted_item}
-                          <Badge variant={item.confidence > 0.8 ? 'default' : item.confidence > 0.5 ? 'secondary' : 'destructive'} className="ml-2 pointer-events-none">
-                            {Math.round(item.confidence * 100)}%
-                          </Badge>
+                      <label htmlFor={`item-${index}`} className="font-medium cursor-pointer">
+                        {item.interpreted_item}
+                        <Badge variant={item.confidence > 0.8 ? 'default' : item.confidence > 0.5 ? 'secondary' : 'destructive'} className="ml-2 pointer-events-none">
+                          {Math.round(item.confidence * 100)}%
+                        </Badge>
                           {item.found_in_database ? (
                             <Badge variant="outline" className="ml-2 pointer-events-none bg-green-50 text-green-700 border-green-200">
                               ✓ In Stock
@@ -240,10 +240,10 @@ export default function ShoppingList({ store }: ShoppingListProps) {
                               Alternative
                             </Badge>
                           )}
-                        </label>
-                        <p className="text-sm text-muted-foreground">
-                          Original: "{item.original_text}" | Category: {item.category}
-                        </p>
+                      </label>
+                      <p className="text-sm text-muted-foreground">
+                        Original: "{item.original_text}" | Category: {item.category}
+                      </p>
                         {!item.found_in_database && item.database_alternatives.length > 0 && (
                           <div className="mt-2 p-2 bg-blue-50 rounded-md">
                             <p className="text-xs font-medium text-blue-700 mb-1">
